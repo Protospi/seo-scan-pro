@@ -3,11 +3,69 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 212 100% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    /* Custom colors for SEO status: */
+    --success-50: 142, 72%, 95%;
+    --success-100: 141, 84%, 93%;
+    --success-500: 142, 71%, 45%;
+    --success-700: 142, 72%, 29%;
+    
+    --warning-50: 48, 100%, 96%;
+    --warning-100: 48, 96%, 89%;
+    --warning-500: 38, 92%, 50%;
+    --warning-700: 32, 81%, 29%;
+    
+    --danger-50: 0, 86%, 97%;
+    --danger-100: 0, 93%, 94%;
+    --danger-500: 0, 84%, 60%;
+    --danger-700: 0, 74%, 42%;
+
+    --radius: 0.75rem;
+  }
+ 
   * {
     @apply border-border;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-gray-50 text-foreground;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-200 hover:shadow-md;
+  }
+
+  .badge-success {
+    @apply bg-[hsl(var(--success-50))] text-[hsl(var(--success-700))] border border-[hsl(var(--success-100))];
+  }
+  
+  .badge-warning {
+    @apply bg-[hsl(var(--warning-50))] text-[hsl(var(--warning-700))] border border-[hsl(var(--warning-100))];
+  }
+  
+  .badge-danger {
+    @apply bg-[hsl(var(--danger-50))] text-[hsl(var(--danger-700))] border border-[hsl(var(--danger-100))];
   }
 }
