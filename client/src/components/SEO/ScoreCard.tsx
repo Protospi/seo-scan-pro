@@ -89,44 +89,33 @@ export function ScoreCard({ analysis }: ScoreCardProps) {
         <div className="flex flex-col lg:flex-row items-center gap-6 mb-8">
           <div className="relative w-36 h-36 flex-shrink-0">
             <div className="w-full h-full flex items-center justify-center">
-              <svg className="w-full h-full" viewBox="0 0 36 36">
+              <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                 {/* Background circle */}
                 <circle 
-                  cx="18" cy="18" r="15.9155" 
-                  className="stroke-current text-gray-100" 
-                  strokeWidth="3" 
+                  cx="50" cy="50" r="45" 
                   fill="none" 
+                  stroke="#f0f0f0" 
+                  strokeWidth="8" 
                 />
                 
-                {/* Progress circle */}
+                {/* Progress circle - calculating the right circumference and offset */}
                 <circle 
-                  cx="18" cy="18" r="15.9155" 
-                  className="stroke-current" 
-                  style={{ stroke: scoreColor, strokeDasharray: dashArray, strokeDashoffset: 0 }}
-                  strokeWidth="3" 
-                  strokeLinecap="round" 
-                  fill="none" 
-                  transform="rotate(-90 18 18)" 
+                  cx="50" cy="50" r="45"
+                  fill="none"
+                  stroke={scoreColor}
+                  strokeWidth="8"
+                  strokeLinecap="round"
+                  strokeDasharray="283"
+                  strokeDashoffset={283 - (283 * score.value / 100)}
                 />
-                
-                {/* Shadow for depth effect */}
-                <circle 
-                  cx="18" cy="18" r="13.9155" 
-                  fill="white" 
-                />
-                
-                {/* Score text */}
-                <text 
-                  x="18" 
-                  y="18" 
-                  className="text-3xl font-bold" 
-                  textAnchor="middle" 
-                  dominantBaseline="central"
-                  fill={scoreColor}
-                >
-                  {score.value}%
-                </text>
               </svg>
+              
+              {/* Score text as a separate div positioned absolutely */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-4xl font-bold" style={{ color: scoreColor }}>
+                  {score.value}
+                </span>
+              </div>
             </div>
           </div>
           
