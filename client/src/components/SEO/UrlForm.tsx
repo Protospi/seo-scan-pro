@@ -8,7 +8,7 @@ interface UrlFormProps {
   isLoading: boolean;
 }
 
-const exampleUrls = ["twitter.com", "apple.com", "airbnb.com", "replit.com"];
+const exampleUrls = ["smarttalks.ai", "twitter.com", "apple.com", "airbnb.com"];
 
 export function UrlForm({ onAnalyze, isLoading }: UrlFormProps) {
   const [url, setUrl] = useState<string>("");
@@ -45,7 +45,7 @@ export function UrlForm({ onAnalyze, isLoading }: UrlFormProps) {
           <div className="flex items-center gap-2 mb-1">
             <div className="h-8 w-1 bg-primary rounded-full"></div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              SEO Meta Tag Analyzer
+              Pedro Loes SEO Tag Analyzer
             </h1>
           </div>
           <p className="text-gray-600 text-lg max-w-2xl">

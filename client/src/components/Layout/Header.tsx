@@ -8,7 +8,7 @@ export function Header() {
           <div className="flex items-center justify-center h-9 w-9 rounded-lg bg-primary text-white">
             <Tag className="h-5 w-5" />
           </div>
-          <h1 className="text-xl font-bold text-gray-900">SEO Tag Inspector</h1>
+          <h1 className="text-xl font-bold text-gray-900">Pedro Loes SEO Tag Inspector</h1>
         </div>
         <div className="flex items-center gap-4">
           <a 
