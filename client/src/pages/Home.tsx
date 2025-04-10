@@ -7,6 +7,7 @@ import { ScoreCard } from "@/components/SEO/ScoreCard";
 import { GooglePreview } from "@/components/SEO/GooglePreview";
 import { SocialPreview } from "@/components/SEO/SocialPreview";
 import { MetaTagsPanel } from "@/components/SEO/MetaTagsPanel";
+import { PrintButton } from "@/components/SEO/PrintButton";
 import { Header } from "@/components/Layout/Header";
 import { Footer } from "@/components/Layout/Footer";
 import { AlertCircle } from "lucide-react";
@@ -56,6 +57,13 @@ export default function Home() {
         
         {analysis && !isLoading && (
           <div className="space-y-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+              <h2 className="text-lg font-medium text-gray-700 mb-2 sm:mb-0">
+                Analysis results for <span className="font-semibold text-primary">{analysis.url}</span>
+              </h2>
+              <PrintButton analysis={analysis} />
+            </div>
+            
             <ScoreCard analysis={analysis} />
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
